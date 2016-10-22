@@ -1,42 +1,51 @@
 'use strict'
+require('shelljs/global')
 
-var fs = require('fs-extra')
 var path = require('path')
-var mkdirp = require('mkdirp')
 var webpack = require('webpack')
 var ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-var buildPath = path.join(process.cwd(), 'dist')
-var publicPath = path.join(process.cwd(), 'public')
+var HtmlwebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const common = require('./config')
+const cpath = common.output
 
-mkdirp.sync(buildPath)
 
 var compiler = webpack({
-  entry: [
+   entry: [
     './src/'
   ],
   output: {
-    filename: 'bundle.js',
-    publicPath: './',
-    path: './dist/'
+    filename: common.assetPath('js/bundle.js'),
+    path: cpath.PROD_PATH
   },
   module: {
-    loaders: common.loaders
+    loaders: common.loaders('prod')
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    alias: common.alias
   },
   plugins: [
     new ProgressBarPlugin(),
     new webpack.optimize.UglifyJsPlugin({minimize: true}),
-    new ExtractTextPlugin('styles.css', { allChunks: true })
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new HtmlwebpackPlugin({
+      title: 'Hello World app',
+      template: path.resolve(cpath.CODE_PATH, 'index.html'),
+      filename: cpath.INDEX_PATH,
+      inject: 'body'
+    }),
+    new ExtractTextPlugin(common.assetPath('css/[name].css'))
   ]
 })
+
 
 compiler.run(function (err, stats) {
   if (err) {
     console.log(err)
   } else {
-    fs.copySync(publicPath, buildPath)
+
+    console.log('ok')
   }
 })
