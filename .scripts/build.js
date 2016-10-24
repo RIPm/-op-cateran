@@ -1,5 +1,4 @@
 'use strict'
-require('shelljs/global')
 
 var path = require('path')
 var webpack = require('webpack')

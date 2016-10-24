@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -6,7 +8,7 @@ const CODE_PATH = path.resolve(ROOT_PATH, 'src')
 
 const PUB_PATH = './'
 const DEV_PATH = '/'
-const BUILD_PATH = 'static'
+const BUILD_PATH = './'
 const PROD_PATH = path.resolve(ROOT_PATH, 'dist')
 
 const FONT_PATH = path.resolve(BUILD_PATH, 'font')
@@ -66,4 +68,3 @@ module.exports = {
   loaders: (which) => [jsLoader, imageLoader, fontLoader, whichStyleLoader(which)],
   assetPath : (nPath)=> path.posix.join(BUILD_PATH, nPath)
 }
-
