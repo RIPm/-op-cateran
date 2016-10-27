@@ -11,7 +11,7 @@ const common = require('./config')
 const cpath = common.output
 
 var config = {
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:8000',
     'webpack/hot/dev-server',

@@ -3,8 +3,8 @@ op-red-line的前端代码
 
 ## Installation
 
-> Based on Cycle.js、draw2d.js to develop. 
-> And use webpack to manage package and build application.
+> Based on `Cycle.js`、`draw2d.js` to develop.
+> And use `webpack` to manage package and build application.
 
 ## Documentation
 
@@ -24,7 +24,7 @@ npm install
 npm run start
 
 // build
-// generated code will build into the `dist` folder 
+// generated code will build into the `dist` folder
 npm run build
 
 // test
@@ -33,13 +33,13 @@ npm run test
 
 ### Directory Structure
 
-Folder `.script` is store the execution code in command line：
+Folder `script` is store the execution code in command line：
 
 > The code for dev server is in the `start.js` file.
 
 > The code for build application is in the `build.js` file.
 
-> The code for unit test server is in the `test.js` file. 
+> The code for unit test server is in the `test.js` file.
 
 Folder `src` is store you write code:
 
@@ -47,9 +47,9 @@ Folder `src` is store you write code:
 
 > Folder `components` is store your component code.
 
-> Folder `modules` is store your integration component code.
+> Folder `pages` is store your integration component code.
 
-> Folder `utils` is store your tool code. such as plugin、route、driver ...
+> Folder `utils` is store your tool code. such as plugin、driver ...
 
 > File `app.js` Integrating the module code into an application.
 
@@ -57,7 +57,10 @@ Folder `src` is store you write code:
 
 > File `index.html` is the `html` build template.
 
+> File `route.js` is the router for `pages`
+
 Folder `test` is store your unit test.
 
 ### Resources
-Not available
+#[cyclejs](https://github.com/cyclejs)
+#[es6-in-depth](https://ponyfoo.com/articles/tagged/es6-in-depth)

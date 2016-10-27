@@ -23,7 +23,7 @@ const jsLoader = {
 }
 
 const whichStyleLoader = (state) =>{
-  let cssM = 'css?modules&localIdentName=[path][name]-[local]_[hash:base64:5]!autoprefixer'
+  let cssM = 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!autoprefixer'
   return {
     test: /\.css$/,
     loader: (state=='dev' && 'style!'+cssM) || (state=='prod' && ExtractTextPlugin.extract('style', cssM))
@@ -47,10 +47,11 @@ const fontLoader = {
 
 
 let alias = {
+  src: CODE_PATH,
   assets: path.resolve(CODE_PATH, 'assets'),
   utils: path.resolve(CODE_PATH, 'utils'),
   components: path.resolve(CODE_PATH, 'components'),
-  modules: path.resolve(CODE_PATH, 'modules')
+  pages: path.resolve(CODE_PATH, 'pages')
 }
 
 let output = {

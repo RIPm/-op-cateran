@@ -9,7 +9,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const common = require('./config')
 const cpath = common.output
 
-
 var compiler = webpack({
    entry: [
     './src/'
