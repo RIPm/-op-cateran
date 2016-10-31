@@ -4,12 +4,12 @@
     "image": "http://a.cdnzz.com/66b5db3b9ad228f70de265bb98b86890/static/img/user-13.jpg"
   },
   "project": [{
-    "id": "1",
+    "id": 1,
     "namespace_name": "rip",
     "name_with_namespace": "R.I.P/op-ceteran",
     "branch": []
   },{
-    "id": "2",
+    "id": 2,
     "namespace_name": "rip",
     "name_with_namespace": "R.I.P/xicjf"
   }]

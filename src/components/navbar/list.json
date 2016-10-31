@@ -1,0 +1,10 @@
+[{
+  "name": "项目管理",
+  "children": [{
+    "name": "创建项目",
+    "match": "/project/create/"
+  }, {
+    "name": "项目列表",
+    "match": "/project/"
+  }]
+}]
